@@ -10,7 +10,6 @@ usvg = "0.5"
 svgdom = "0.16"
 lyon = "0.11"
 conv = "0.3" # this is the version used by gerber-types
-gnuplot = "0.0.26" # just for debugging
 log = "0.4"
 env_logger = "0.6"
 

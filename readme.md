@@ -42,13 +42,13 @@ Usage
 
     ./svg2gerb input.svg [output.gerb [layer_type]]
 
-If no output file is specified it will take the input filename and replace the extension with ".gerb".
+If no output file is specified it will take the input filename and replace the extension with "`.gerb`".
 
-If the output path is just "-" the Gerber data will be printed to stdout.
+If the output path is just "`-`" the Gerber data will be printed to stdout.
 
 `layer_type` specifies what kind of metadata the output contains. This is
 optional but recommended to make it more clear for the manufacturer how to
 interpret your files. Possible values are (case insensitive):
 
  - `F.Cu`, `B.Cu` Copper layer, positive file polarity
- - `F.Mask`, `B.Mask` Solder mask, negative file polarity (i.e. the shapes specify areas that should *not* be covered in solder mask)
+ - `F.Mask`, `B.Mask` Solder mask, negative file polarity (i.e. the shapes specify areas that should _not_ be covered in solder mask)

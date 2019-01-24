@@ -1,8 +1,5 @@
 extern crate lyon;
 
-//extern crate gnuplot;
-//use sort_polygons::gnuplot::AxesCommon;
-
 //use lyon::tessellation as tess;
 use lyon::path::iterator::PathIterator;
 use lyon::path::FlattenedEvent;
@@ -178,18 +175,6 @@ pub fn create_parent_list<'a>(polygons: &'a Vec<Polygon>) -> Vec<ParentInfo<'a>>
         let mut parent_stack: Vec<usize> = Vec::new();
 
 
-
-        /*
-        let mut fig = gnuplot::Figure::new();
-        {
-        let mut ax = fig.axes2d();
-
-        ax.set_title(&format!("Step {}", _step), &[]);
-        ax.lines(&[pt.vertex.x, pt.prev.x], &[pt.vertex.y, pt.prev.y], &[gnuplot::Color("black"), gnuplot::LineWidth(2.0)]);
-        ax.lines(&[pt.vertex.x, pt.next.x], &[pt.vertex.y, pt.next.y], &[gnuplot::Color("black"), gnuplot::LineWidth(2.0)]);
-        ax.points(&[pt.vertex.x], &[pt.vertex.y], &[gnuplot::Color("black"), gnuplot::PointSize(5.0), gnuplot::PointSymbol('o')]);
-        */
-
         // count number of edges between current vertex and the outside (while ignoring edges of
         // the current polygon)
         for ref edge in &current_scanline {
@@ -203,8 +188,6 @@ pub fn create_parent_list<'a>(polygons: &'a Vec<Polygon>) -> Vec<ParentInfo<'a>>
             if edge.poly_idx == pt.poly_idx {
                 continue;
             }
-
-            //ax.lines(&[edge.upper.x, edge.lower.x], &[edge.upper.y, edge.lower.y], &[gnuplot::Color("red"), gnuplot::LineWidth(2.0)]);
 
             // push or pop polys to/from stack
             let mut pop = false;
@@ -220,11 +203,6 @@ pub fn create_parent_list<'a>(polygons: &'a Vec<Polygon>) -> Vec<ParentInfo<'a>>
                 parent_stack.push(edge.poly_idx);
             }
         }
-
-        /*
-        }
-        fig.show();
-        */
 
         trace!(" -> handling point {:?}", pt.vertex);
         trace!("    -> last edge on stack of {}: {:?}", parent_stack.len(), parent_stack.last());

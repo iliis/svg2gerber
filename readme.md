@@ -29,7 +29,7 @@ however it is unlikely I will do this. So, keep the following things in mind:
   most likely crash. This could be fixed by pre-processing all paths by
   tesselating them in lyon and tracing the outlines.
 
-- All paths are must be closed. svg2gerber probably crashes if unclosed paths are fed to it.
+- All paths must be closed. svg2gerber probably crashes if unclosed paths are fed to it.
 
 - No support for Inkscape layers yet. This would require either a second 
 

@@ -1,6 +1,8 @@
 svg2gerber
 ==========
 
+__Alternative: Have a look at [gerbolyze](https://github.com/jaseg/gerbolyze), a much more polished tool for the same job!__
+
 This is a simple script that reads all path's in an SVG and converts them into
 a Gerber-file (also known as RS-274X; this is used to manufacture printed
 circuit boards).

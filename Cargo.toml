@@ -4,14 +4,10 @@ version = "0.1.0"
 authors = ["Samuel Bryner <samuelbryner@gmx.ch>"]
 
 [dependencies]
-#gerber-types = { git = "https://github.com/dbrgn/gerber-types-rs" }
-gerber-types = "0.1"
+gerber-types = "0.2"
 usvg = "0.5"
 svgdom = "0.16"
 lyon = "0.11"
 conv = "0.3" # this is the version used by gerber-types
 log = "0.4"
 env_logger = "0.6"
-
-[patch.crates-io]
-gerber-types = { path = "../gerber-types-rs" }
